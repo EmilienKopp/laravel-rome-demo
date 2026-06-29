@@ -32,8 +32,6 @@
             <div class="text-left">
                 <p class="text-6xl font-black">
                     laravel-<span class="text-red-500">rome</span>
-                    <span class="font-mono text-white/70 text-xs">(v0.1.0)</span
-                    >
                 </p>
                 <p class="mt-3 text-2xl font-light text-white/50">{repo}</p>
 
