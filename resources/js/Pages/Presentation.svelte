@@ -13,6 +13,7 @@
     import RepositoryShrinks from "./slides/RepositoryShrinks.svelte";
     import Composability from "./slides/Composability.svelte";
     import Fix from "./slides/Fix.svelte";
+    import ThankYou from "./slides/ThankYou.svelte";
 
     // real rows from the database view, passed from the route
     let { viewRows = [] } = $props();
@@ -38,4 +39,5 @@
     <RepositoryShrinks />
     <Composability />
     <Fix />
+    <ThankYou />
 </Presentation>
