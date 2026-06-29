@@ -1,0 +1,3 @@
+[submodule "packages/laravel-rome"]
+	path = packages/laravel-rome
+	url = git@github.com:EmilienKopp/laravel-rome.git

@@ -1,11 +1,22 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReportController;
+use App\Models\Views\ProductReport;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/presentation', fn () => Inertia::render('Presentation', [
+    // real rows straight from the database view (same one the report uses)
+    'viewRows' => ProductReport::query()
+        ->orderByDesc('price')
+        ->take(5)
+        ->get(['product_name', 'category_name', 'price', 'price_with_tax']),
+]))->name('presentation');
+
+Route::get('/', fn () => redirect()->route('report'));
+Route::get('/report', [ReportController::class, 'index'])->name('report');
+Route::post('/report/{id}/price', [ReportController::class, 'updatePrice'])->name('report.updatePrice');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -1,0 +1,125 @@
+@layer reset, presentation, overrides;
+
+/* fonts */
+@import '@fontsource/atkinson-hyperlegible';
+@import '@fontsource/monaspace-neon';
+
+/* presentation theme */
+@import '@animotion/core/theme' layer(presentation);
+
+/* tailwind v4 */
+@import 'tailwindcss/theme';
+@import 'tailwindcss/utilities';
+
+/* scan Svelte pages/components for utility classes */
+@source '../js/**/*.svelte';
+
+@layer reset {
+	*,
+	*::before,
+	*::after {
+		padding: 0px;
+		margin: 0px;
+		box-sizing: border-box;
+	}
+
+	/* Inertia mounts into #app; Reveal.js needs a full-height ancestor chain */
+	html,
+	body,
+	#app {
+		height: 100%;
+	}
+}
+
+@layer presentation {
+	/* for animations */
+	.hidden {
+		display: none;
+	}
+
+	/* view transitions */
+	html {
+		view-transition-name: none;
+	}
+
+	::view-transition-group(*) {
+		animation-duration: var(--view-transition-duration);
+		animation-timing-function: var(--ease);
+	}
+
+	::view-transition-new(*):only-child {
+		animation: scale-in var(--view-transition-duration) var(--ease);
+	}
+
+	::view-transition-old(*):only-child {
+		animation: scale-out var(--view-transition-duration) var(--ease);
+	}
+}
+
+@layer overrides {
+	/* minimalist dark / red / white theme */
+	:root {
+		--r-background-color: #0a0a0b;
+		--r-main-color: #ededed;
+		--r-heading-color: #ffffff;
+		--r-heading-font: 'Atkinson Hyperlegible';
+		--r-main-font: 'Atkinson Hyperlegible';
+		--r-link-color: #ef4444;
+		--red: #ef4444;
+	}
+
+	/* thin red progress bar, no chrome noise */
+	.reveal .progress {
+		color: var(--red);
+		height: 3px;
+	}
+
+	/* dimmed navigation controls */
+	.reveal .controls {
+		color: color-mix(in oklab, white 35%, transparent);
+	}
+
+	::selection {
+		background: var(--red);
+		color: white;
+	}
+}
+
+/*
+ * Code size — must be UNLAYERED: reveal.js/reveal.css is imported by the
+ * Presentation component without a layer, and unlayered rules beat anything
+ * inside @layer (e.g. reveal's `.reveal pre { font-size: 0.55em }`).
+ */
+.reveal pre.shiki-magic-move-container {
+	font-size: 1.6rem;
+	line-height: 1.6;
+}
+
+@keyframes scale-in {
+	from {
+		scale: 0;
+		opacity: 0;
+	}
+}
+
+@keyframes scale-out {
+	to {
+		scale: 0;
+		opacity: 0;
+	}
+}
+
+@keyframes rotate {
+	from {
+		opacity: 0;
+	}
+	20% {
+		rotate: 0deg;
+	}
+	40% {
+		opacity: 1;
+	}
+	to {
+		rotate: 360deg;
+	}
+}
