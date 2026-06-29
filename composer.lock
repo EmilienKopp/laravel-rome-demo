@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf90ad9f2fec5927d30eed3fb79e8ee3",
+    "content-hash": "423a90209ed512c11b2d4190e32bf585",
     "packages": [
         {
             "name": "brick/math",
@@ -3380,10 +3380,16 @@
         {
             "name": "splitstack/laravel-rome",
             "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/EmilienKopp/laravel-rome.git",
+                "reference": "efb4f12473ed4734ca6c9b4a9f74703039931aa6"
+            },
             "dist": {
-                "type": "path",
-                "url": "./packages/laravel-rome",
-                "reference": "a607a7e1c35e84113e940387402523dabfe8ee3c"
+                "type": "zip",
+                "url": "https://api.github.com/repos/EmilienKopp/laravel-rome/zipball/efb4f12473ed4734ca6c9b4a9f74703039931aa6",
+                "reference": "efb4f12473ed4734ca6c9b4a9f74703039931aa6",
+                "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "^11.0|^12.0|^13.0",
@@ -3397,6 +3403,7 @@
                 "pestphp/pest-plugin-drift": "^3.0",
                 "phpstan/phpstan": "^2.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -3410,39 +3417,7 @@
                     "Splitstack\\Rome\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Splitstack\\Rome\\Tests\\": "tests/"
-                },
-                "files": [
-                    "tests/Integration/Shared/ReadOnlyModelBehaviourTest.php",
-                    "tests/Integration/Shared/ProxyBehaviourTest.php",
-                    "tests/Integration/Shared/ExcludeBehaviourTest.php"
-                ]
-            },
-            "scripts": {
-                "test": [
-                    "vendor/bin/pest --testsuite=Unit,Feature"
-                ],
-                "test:integration": [
-                    "vendor/bin/pest --testsuite=Integration:Postgres,Integration:Mysql"
-                ],
-                "test:postgres": [
-                    "vendor/bin/pest --testsuite=Integration:Postgres"
-                ],
-                "test:mysql": [
-                    "vendor/bin/pest --testsuite=Integration:Mysql"
-                ],
-                "lint": [
-                    "vendor/bin/pint"
-                ],
-                "analyse": [
-                    "vendor/bin/phpstan analyse"
-                ],
-                "test:phpstan": [
-                    "vendor/bin/pest --testsuite=PHPStan"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3456,10 +3431,11 @@
                 "laravel",
                 "rome"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/EmilienKopp/laravel-rome/issues",
+                "source": "https://github.com/EmilienKopp/laravel-rome/tree/main"
+            },
+            "time": "2026-06-21T10:20:27+00:00"
         },
         {
             "name": "symfony/clock",
