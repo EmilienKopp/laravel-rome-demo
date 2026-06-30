@@ -1,8 +1,16 @@
 <script>
-    import { Slide, Transition, Code } from "@animotion/core";
+    import { Slide, Transition, Code, Action } from "@animotion/core";
     import { codeTheme, codeOptions } from "./code.js";
 
     let code;
+    const initialCode = `
+        public function getActiveSubscriptionsWithUsage()
+        {
+            return Subscription::query()
+                // TODO: join tenants, plans, billing_periods, usage_records
+                ->get();
+        }
+    `;
 </script>
 
 <Slide class="h-full place-content-center place-items-center">
@@ -13,8 +21,29 @@
     </Transition>
 
     <Transition
-        do={async () => {
-            await code.update`
+        class="mt-12 w-full max-w-5xl rounded-xl border border-white/10 bg-white/[0.03] px-8 py-6"
+    >
+        <Code
+            bind:this={code}
+            lang="php"
+            theme={codeTheme}
+            code={initialCode}
+            options={codeOptions}
+        />
+
+        <Action
+            undo={() => {
+                code.update`
+                    public function getActiveSubscriptionsWithUsage()
+                    {
+                        return Subscription::query()
+                            // TODO: join tenants, plans, billing_periods, usage_records
+                            ->get();
+                    }
+                `;
+            }}
+            do={() => {
+                code.update`   
                 public function getActiveSubscriptionsWithUsage()
                 {
                     return Subscription::query()
@@ -28,21 +57,13 @@
                         ->get();
                 }
             `;
-        }}
-        class="mt-12 w-full max-w-5xl rounded-xl border border-white/10 bg-white/[0.03] px-8 py-6"
-    >
-        <Code
-            bind:this={code}
-            lang="php"
-            theme={codeTheme}
-            code={``}
-            options={codeOptions}
-        />
-    </Transition>
+            }}
+        ></Action>
 
-    <Transition class="mt-10">
-        <p class="text-3xl font-light text-white/60">
-            This is SQL wearing a PHP costume.
-        </p>
+        <Action
+            do={() => {
+                code.selectLines`4-10`;
+            }}
+        ></Action>
     </Transition>
 </Slide>

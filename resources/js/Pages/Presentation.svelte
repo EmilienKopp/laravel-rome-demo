@@ -7,11 +7,17 @@
     import Symptoms from "./slides/Symptoms.svelte";
     import JoinHell from "./slides/JoinHell.svelte";
     import SqlSprawl from "./slides/SqlSprawl.svelte";
+    import FlattenToSort from "./slides/FlattenToSort.svelte";
+    import ViewsFixThis from "./slides/ViewsFixThis.svelte";
     import ViewExample from "./slides/ViewExample.svelte";
     import WhatIsAView from "./slides/WhatIsAView.svelte";
     import WriteItOnce from "./slides/WriteItOnce.svelte";
     import RepositoryShrinks from "./slides/RepositoryShrinks.svelte";
+    import FlatAndSortable from "./slides/FlatAndSortable.svelte";
     import Composability from "./slides/Composability.svelte";
+    import WhyNotViews from "./slides/WhyNotViews.svelte";
+    import WriteSafety from "./slides/WriteSafety.svelte";
+    import WhatWeNeed from "./slides/WhatWeNeed.svelte";
     import Fix from "./slides/Fix.svelte";
     import ThankYou from "./slides/ThankYou.svelte";
 
@@ -28,16 +34,22 @@
     }}
 >
     <Title />
+    <FlattenToSort />
     <Symptoms />
     <JoinHell />
     <SqlSprawl />
-    <Stigma />
-    <OpinionVsReality />
+    <ViewsFixThis />
     <ViewExample rows={viewRows} />
     <WhatIsAView />
+    <Composability />
+    <WhyNotViews />
+    <Stigma />
+    <OpinionVsReality />
     <WriteItOnce />
     <RepositoryShrinks />
-    <Composability />
+    <FlatAndSortable />
+    <WriteSafety />
+    <WhatWeNeed />
     <Fix />
     <ThankYou />
 </Presentation>

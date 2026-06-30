@@ -9,9 +9,7 @@
     <div class="text-left">
         <Transition visible>
             <p class="mb-16 text-6xl font-black tracking-tight">
-                {phase === "opinion"
-                    ? "## The general opinion"
-                    : "## The reality"}
+                {phase === "opinion" ? "The general opinion" : "The reality"}
             </p>
         </Transition>
 

@@ -4,9 +4,11 @@
 
 <Slide class="h-full place-content-center place-items-center text-center">
     <Transition visible>
-        <h1 class="text-9xl mb-5"># The Stigma</h1>
-        <p class="text-8xl font-black tracking-tight">
-            "No logic <span class="text-red-500">in the DB</span>”
+        <h1 class="text-9xl mb-5">
+            The <span class="text-red-500">Stigma</span>
+        </h1>
+        <p class="text-8xl font-subtle italic tracking-tight">
+            "No logic in the DB”
         </p>
     </Transition>
     <Transition class="mt-12">

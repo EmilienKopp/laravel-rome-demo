@@ -5,7 +5,7 @@
 <Slide class="h-full place-content-center place-items-center text-center">
     <Transition visible>
         <h1 class="text-[8.5rem] font-black leading-[0.95] tracking-tighter">
-            Don’t be <span class="text-red-500">afraid</span><br />
+            Stop being <span class="text-red-500">scared</span><br />
             of your database
         </h1>
     </Transition>

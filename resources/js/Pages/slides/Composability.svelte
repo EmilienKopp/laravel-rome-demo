@@ -13,8 +13,19 @@
     </Transition>
     <Transition class="mt-12">
         <p class="text-2xl font-light tracking-wide text-white/50">
-            PostgREST · Metabase · Grafana · dbt — no endpoint, no developer in
-            the loop.
+            Inside your app...
+        </p>
+    </Transition>
+    <Transition class="mt-12">
+        <p class="text-2xl font-light tracking-wide text-white/50">
+            ... and in PostgREST · Metabase · Grafana · dbt ...
+        </p>
+    </Transition>
+    <Transition class="mt-12">
+        <p class="text-3xl font-light tracking-wide text-white/50">
+            Your app and your BI tools <span class="text-red-500"
+                >read the same thing</span
+            >.
         </p>
     </Transition>
 </Slide>

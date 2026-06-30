@@ -35,7 +35,9 @@
                 </p>
                 <p class="mt-3 text-2xl font-light text-white/50">{repo}</p>
 
-                <ul class="mt-6 space-y-2 text-xl font-light text-white/55">
+                <ul
+                    class="mt-6 space-y-2 text-xl font-light text-white/55 list-none"
+                >
                     <li>
                         <span class="text-red-500">›</span>
                         View-aware Eloquent models — read-only, write-back proxy
