@@ -20,7 +20,7 @@
         }
 
         $row = ActiveSubscriptionUsage::first();
-        $row->update(['price' => 42]); // 💥 can't UPDATE a view
+        $row->update(['price' => 42]); // 💥 error here... or a silent write
     `;
 </script>
 
@@ -51,4 +51,14 @@
             code.selectLines`7`;
         }}
     ></Action>
+
+    <!-- Some views ARE updatable (no GROUP BY / aggregates) — so you can't
+         rely on the DB to reject the write. Enforce read-only in the model. -->
+    <Transition class="mt-8">
+        <p class="text-2xl font-light text-white/60">
+            Simple views are
+            <span class="text-white/90">updatable</span> — the DB won’t always
+            stop you. So enforce it in the model.
+        </p>
+    </Transition>
 </Slide>
