@@ -12,12 +12,9 @@
     </Transition>
     <Transition visible class="mt-6">
         <p class="text-4xl font-light text-white/60">
-            They just used to be <span class="text-white">invisible</span>.
+            They solve <span class="text-white">real problems</span>. They just
+            needed <span class="text-white">better tooling</span>.
         </p>
-    </Transition>
-
-    <Transition class="mt-10">
-        <p class="text-6xl font-black text-red-500">Not anymore.</p>
     </Transition>
 
     <!-- package CTA + QR -->
