@@ -26,7 +26,9 @@
             }}
             class="rounded-xl border border-white/10 bg-white/[0.03] px-6 py-5"
         >
-            <p class="mb-4 text-2xl font-light text-white/50">PHP sprawl</p>
+            <p class="mb-4 text-2xl font-light text-white/50">
+                SQL sprawl in PHP
+            </p>
             <Code
                 bind:this={phpCode}
                 lang="php"

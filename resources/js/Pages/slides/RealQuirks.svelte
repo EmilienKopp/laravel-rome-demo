@@ -9,7 +9,9 @@
         </p>
     </Transition>
 
-    <ul class="mt-14 list-none space-y-8 text-left text-4xl font-light text-white/70">
+    <ul
+        class="mt-14 list-none space-y-8 text-left text-4xl font-light text-white/70"
+    >
         <Transition>
             <li>
                 <span class="mr-3 text-red-500">›</span>
@@ -36,7 +38,7 @@
 
     <Transition class="mt-14">
         <p class="text-2xl font-light italic text-white/50">
-            These are real reasons to hesitate. Not the stigma.
+            These are all very valid reasons to hesitate.
         </p>
     </Transition>
 </Slide>

@@ -11,8 +11,8 @@
     </Transition>
     <Transition class="mt-12">
         <p class="text-4xl font-light text-white/70">
-            Views aren’t dangerous. They were just
-            <span class="text-white">invisible</span>.
+            A short case for
+            <span class="text-white">database views</span>.
         </p>
     </Transition>
 </Slide>

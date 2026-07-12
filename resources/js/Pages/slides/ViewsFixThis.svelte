@@ -1,14 +1,72 @@
 <script>
-    import { Slide, Transition } from "@animotion/core";
+    import { Slide, Transition, Code } from "@animotion/core";
+    import { codeTheme, codeOptions } from "./code.js";
+
+    // A model whose table is a view — that's the whole setup.
+    const models = `
+        class MyView extends Model
+        {
+            protected $table = 'view_name';
+        }
+    `;
+
+    // Each pain point collapses to a single, boring Eloquent call.
+    const sortFix = `
+        // the sort we couldn’t write
+        MyView::orderByDesc('total_usage')
+            ->paginate();
+    `;
+
+    const joinFix = `
+        // the join chain, gone
+        MyView::where('user_id', $id)
+            ->paginate();
+    `;
 </script>
 
-<Slide class="h-full place-content-center place-items-center text-center">
+<Slide class="h-full place-content-center place-items-center">
     <Transition visible>
-        <p class="text-8xl font-black tracking-tight">
-            Database <span class="text-red-500">views</span>
+        <p class="text-center text-7xl font-black tracking-tight">
+            Database <span class="text-red-500">views</span> fix both of these.
         </p>
     </Transition>
-    <Transition class="mt-6">
-        <p class="text-5xl font-light text-white/70">fix both of these.</p>
+
+    <Transition
+        class="mt-8 w-full max-w-3xl rounded-xl border border-white/10 bg-white/[0.03] px-8 py-5"
+    >
+        <Code lang="php" theme={codeTheme} code={models} options={codeOptions} />
+    </Transition>
+
+    <!-- Two fixes, revealed side by side to save height. -->
+    <div class="mt-6 grid w-full max-w-5xl grid-cols-2 gap-6">
+        <Transition
+            class="rounded-xl border border-white/10 bg-white/[0.03] px-6 py-4"
+        >
+            <p class="mb-3 text-xl font-light text-white/50">Sorting</p>
+            <Code
+                lang="php"
+                theme={codeTheme}
+                code={sortFix}
+                options={codeOptions}
+            />
+        </Transition>
+
+        <Transition
+            class="rounded-xl border border-white/10 bg-white/[0.03] px-6 py-4"
+        >
+            <p class="mb-3 text-xl font-light text-white/50">No JOIN hell</p>
+            <Code
+                lang="php"
+                theme={codeTheme}
+                code={joinFix}
+                options={codeOptions}
+            />
+        </Transition>
+    </div>
+
+    <Transition class="mt-8">
+        <p class="text-4xl font-black tracking-tight">
+            ...and <span class="text-red-500">more</span>.
+        </p>
     </Transition>
 </Slide>
