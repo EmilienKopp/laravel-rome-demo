@@ -7,15 +7,16 @@ use App\Models\Views\ProductReport;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/presentation', fn () => Inertia::render('Presentation', [
-    // real rows straight from the database view (same one the report uses)
+Route::get('/views-are-great', fn () => Inertia::render('Presentation', [
     'viewRows' => ProductReport::query()
         ->orderByDesc('price')
         ->take(5)
         ->get(['product_name', 'category_name', 'price', 'price_with_tax']),
 ]))->name('presentation');
 
-Route::get('/', fn () => redirect()->route('presentation'));
+Route::get('/presentation', fn () => redirect()->route('presentation'));
+
+Route::get('/', fn () => Inertia::render('Home'))->name('home');
 Route::get('/report', [ReportController::class, 'index'])->name('report');
 Route::post('/report/{id}/price', [ReportController::class, 'updatePrice'])->name('report.updatePrice');
 
