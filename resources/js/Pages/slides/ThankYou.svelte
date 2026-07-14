@@ -1,6 +1,10 @@
 <script>
     import { Slide, Transition } from "@animotion/core";
+    import QrCode from "../../components/QrCode.svelte";
+    import { page } from "@inertiajs/svelte";
+
     const repo = "github.com/EmilienKopp/laravel-rome";
+    const surveyUrl = $derived(page.props.surveyUrl);
 </script>
 
 <Slide class="h-full place-content-center place-items-center text-center">
@@ -52,6 +56,22 @@
                     </li>
                 </ul>
             </div>
+        </div>
+    </Transition>
+
+    <Transition visible class="mt-8">
+        <p class="text-2xl font-light text-white/50">
+            <span class="text-white">Try it out</span> and let me know what you think!
+        </p>
+        <div>
+            <QrCode {surveyUrl} size={160} />
+            <a
+                href={surveyUrl}
+                target="_blank"
+                class="mt-3 block text-xl font-light text-white/50 hover:text-white/80"
+            >
+                Take the survey
+            </a>
         </div>
     </Transition>
 </Slide>
