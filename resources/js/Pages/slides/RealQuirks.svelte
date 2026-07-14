@@ -5,7 +5,13 @@
 <Slide class="h-full place-content-center place-items-center">
     <Transition visible>
         <p class="text-center text-7xl font-black tracking-tight">
-            The <span class="text-red-500">legitimate</span> friction
+            The <span class="text-red-500">other</span> problem
+        </p>
+    </Transition>
+
+    <Transition class="mt-6">
+        <p class="text-center text-4xl font-light text-white/60">
+            ORMs are not view-friendly.
         </p>
     </Transition>
 
@@ -30,8 +36,8 @@
         <Transition>
             <li>
                 <span class="mr-3 text-red-500">›</span>
-                <span class="text-white">Invisible</span> — no Eloquent model, no
-                IDE support, nothing
+                <span class="text-white">Invisible</span> — no ORM model, no IDE
+                support, nothing
             </li>
         </Transition>
     </ul>
